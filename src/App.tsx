@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
 
-function App() {
+export interface IAppProps {}
+
+export default function App(props: IAppProps) {
+  const [isPlaying, setPlaying] = React.useState(false);
+  const audioRef = React.useRef<HTMLAudioElement>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <audio ref={audioRef} src="https://streaming.radiojat.rs/radiojat.mp3" />
+      <button
+        onClick={() => {
+          if (isPlaying) {
+            audioRef.current?.pause();
+          } else {
+            audioRef.current?.play();
+          }
+          setPlaying(!isPlaying);
+        }}
+      >
+        {isPlaying ? "Pause" : "Play"}
+      </button>
     </div>
   );
 }
-
-export default App;
