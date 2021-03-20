@@ -1,5 +1,6 @@
 import * as React from "react";
 import radioStations from "./components/radioStations";
+import "./App.css";
 
 export interface IAppProps {}
 
@@ -13,6 +14,14 @@ export default function App(props: IAppProps) {
   const [station, setStation] = React.useState<RadioStation | null>(null);
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
+  React.useEffect(() => {
+    if (isPlaying) {
+      audioRef.current?.play();
+    } else {
+      audioRef.current?.pause();
+    }
+  }, [station, isPlaying]);
+
   return (
     <div>
       {station != null && (
@@ -20,11 +29,6 @@ export default function App(props: IAppProps) {
           <audio ref={audioRef} src={station.src} />
           <button
             onClick={() => {
-              if (isPlaying) {
-                audioRef.current?.pause();
-              } else {
-                audioRef.current?.play();
-              }
               setPlaying(!isPlaying);
             }}
           >
@@ -35,13 +39,16 @@ export default function App(props: IAppProps) {
 
       {radioStations.map((station) => {
         return (
-          <button
+          <div
+            className="stations"
+            key={station.name}
             onClick={() => {
               setStation(station);
+              setPlaying(true);
             }}
           >
-            {station.name}
-          </button>
+            <img src={station.logo} alt="" className="stationLogo"></img>
+          </div>
         );
       })}
     </div>
