@@ -8,3 +8,6 @@
 .stationLogo {
   width: 250px;
 }
+.station {
+  cursor: pointer;
+}

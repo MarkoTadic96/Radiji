@@ -1,6 +1,7 @@
 import * as React from "react";
 import radioStations from "./components/radioStations";
 import "./App.css";
+import { useHotkeys } from "react-hotkeys-hook";
 
 export interface IAppProps {}
 
@@ -22,6 +23,20 @@ export default function App(props: IAppProps) {
     }
   }, [station, isPlaying]);
 
+  useHotkeys(
+    "space",
+    () => {
+      setPlaying(!isPlaying);
+    },
+    {
+      filter: (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        return true;
+      },
+    }
+  );
+
   return (
     <div>
       {station != null && (
@@ -40,7 +55,7 @@ export default function App(props: IAppProps) {
       {radioStations.map((station) => {
         return (
           <div
-            className="stations"
+            className="station"
             key={station.name}
             onClick={() => {
               setStation(station);
