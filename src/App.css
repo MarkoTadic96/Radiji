@@ -6,8 +6,24 @@
   padding: 0;
 }
 .stationLogo {
-  width: 250px;
+  height: 50px;
 }
 .station {
+  height: 75px;
   cursor: pointer;
+  width: 500px;
+  background: rgba(102, 97, 97, 0.5);
+  margin: 15px;
+  border-radius: 25px;
+  display: flex;
+  padding-left: 29px;
+  align-items: center;
+}
+.station:hover {
+  background: rgba(133, 131, 131, 0.5);
+}
+.stationName {
+  color: aliceblue;
+  padding-left: 50px;
+  font-size: large;
 }

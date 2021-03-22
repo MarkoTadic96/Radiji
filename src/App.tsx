@@ -1,18 +1,23 @@
 import * as React from "react";
 import radioStations from "./components/radioStations";
 import "./App.css";
-import { useHotkeys } from "react-hotkeys-hook";
+
+import Header from "./components/header";
 
 export interface IAppProps {}
 
 interface RadioStation {
   name: string;
   src: string;
+  logo: string;
 }
 
 export default function App(props: IAppProps) {
   const [isPlaying, setPlaying] = React.useState(false);
   const [station, setStation] = React.useState<RadioStation | null>(null);
+  const [stationsList, setStationsList] = React.useState<RadioStation[]>(
+    radioStations
+  );
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   React.useEffect(() => {
@@ -23,22 +28,19 @@ export default function App(props: IAppProps) {
     }
   }, [station, isPlaying]);
 
-  useHotkeys(
-    "space",
-    () => {
-      setPlaying(!isPlaying);
-    },
-    {
-      filter: (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        return true;
-      },
-    }
-  );
-
   return (
     <div>
+      <Header
+        onSearch={(query) => {
+          const filtered = radioStations.filter((radioStation) => {
+            return (
+              radioStation.name.toLowerCase().indexOf(query.toLowerCase()) !==
+              -1
+            );
+          });
+          setStationsList(filtered);
+        }}
+      ></Header>
       {station != null && (
         <div>
           <audio ref={audioRef} src={station.src} />
@@ -52,7 +54,7 @@ export default function App(props: IAppProps) {
         </div>
       )}
 
-      {radioStations.map((station) => {
+      {stationsList.map((station) => {
         return (
           <div
             className="station"
@@ -63,6 +65,7 @@ export default function App(props: IAppProps) {
             }}
           >
             <img src={station.logo} alt="" className="stationLogo"></img>
+            <p className="stationName"> {station.name} </p>
           </div>
         );
       })}
