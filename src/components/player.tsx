@@ -12,6 +12,7 @@ export default function Player(props: IPlayerProps) {
 
   React.useEffect(() => {
     if (isPlaying) {
+      audioRef.current?.load();
       audioRef.current?.play();
     } else {
       audioRef.current?.pause();
@@ -23,7 +24,7 @@ export default function Player(props: IPlayerProps) {
       <div className="background"> </div>
       <div className="player">
         {props.station != null && (
-          <>
+          <div className="stationDetails">
             <audio ref={audioRef} src={props.station.src} />
             <img
               src={props.station.logo}
@@ -31,8 +32,9 @@ export default function Player(props: IPlayerProps) {
               className="currentStationLogo"
             ></img>
             <p className="currentStationName">{props.station.name}</p>
-          </>
+          </div>
         )}
+
         <div
           className="playButton"
           onClick={() => {
@@ -46,9 +48,8 @@ export default function Player(props: IPlayerProps) {
           )}
         </div>
 
-        <div>
+        <div className="volumeControl">
           <input
-            className="volumeControl"
             type="range"
             min="0"
             max="1"
