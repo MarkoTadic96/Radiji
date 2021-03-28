@@ -17,7 +17,7 @@
 }
 
 .stationLogo {
-  max-height: 100%;
+  max-height: 80%;
 }
 .station {
   height: 89px;
@@ -36,6 +36,8 @@
 }
 .stationName {
   color: rgba(47, 72, 88, 1);
-  padding-left: 50px;
+  justify-self: end;
   font-size: large;
+  position: absolute;
+  left: 400px;
 }

@@ -1,41 +1,41 @@
 const radios = [
   {
-    name: "otvoreni",
+    name: "Otvoreni",
     src: "http://stream.otvoreni.hr/otvoreni",
     logo: "logos/otvoreniRadioLogo.png",
   },
   {
-    name: "radio JAT",
+    name: "Radio JAT",
     src: "https://streaming.radiojat.rs/radiojat.mp3",
     logo: "logos/radioJatLogo.png",
   },
   {
-    name: "enter ZG",
+    name: "Enter ZG",
     src: "http://live.enterzagreb.hr:8023/;",
     logo: "logos/enterZGLogo.png",
   },
   {
-    name: "gold FM",
+    name: "Gold FM",
     src: "http://live.goldfm.hr:8068/;",
     logo: "logos/GoldenFMLogo.png",
   },
   {
-    name: "antena ZG",
+    name: "Antena ZG",
     src: "http://live.antenazagreb.hr:8000/;",
     logo: "logos/antenaZGLogo.png",
   },
   {
-    name: "radio 101",
+    name: "Radio 101",
     src: "http://live.radio101.hr:9531/stream/1/",
     logo: "logos/radio101Logo.png",
   },
   {
-    name: "radio Sljeme",
+    name: "Radio Sljeme",
     src: "https://21223.live.streamtheworld.com/SLJEMEAAC_SC",
     logo: "logos/radioSljemeLogo.png",
   },
   {
-    name: "extra FM",
+    name: "Extra FM",
     src: "http://streams.extrafm.hr:8110/;",
     logo: "logos/extraFMLogo.png",
   },
