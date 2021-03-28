@@ -7,9 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("/src/components/backgroundImage.jpg");
   width: 100%;
-  height: auto;
+
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 code {
