@@ -3,14 +3,10 @@ import radioStations from "./components/radioStations";
 import "./App.css";
 
 import Header from "./components/header";
+import Player from "./components/player";
+import { RadioStation } from "./model/RadioStation";
 
 export interface IAppProps {}
-
-interface RadioStation {
-  name: string;
-  src: string;
-  logo: string;
-}
 
 export default function App(props: IAppProps) {
   const [isPlaying, setPlaying] = React.useState(false);
@@ -41,34 +37,26 @@ export default function App(props: IAppProps) {
           setStationsList(filtered);
         }}
       ></Header>
-      {station != null && (
-        <div>
-          <audio ref={audioRef} src={station.src} />
-          <button
-            onClick={() => {
-              setPlaying(!isPlaying);
-            }}
-          >
-            {isPlaying ? "Pause" : "Play"}
-          </button>
+      <div className="main">
+        <div className="stationList">
+          {stationsList.map((station) => {
+            return (
+              <div
+                className="station"
+                key={station.name}
+                onClick={() => {
+                  setStation(station);
+                  setPlaying(true);
+                }}
+              >
+                <img src={station.logo} alt="" className="stationLogo"></img>
+                <p className="stationName"> {station.name} </p>
+              </div>
+            );
+          })}
         </div>
-      )}
-
-      {stationsList.map((station) => {
-        return (
-          <div
-            className="station"
-            key={station.name}
-            onClick={() => {
-              setStation(station);
-              setPlaying(true);
-            }}
-          >
-            <img src={station.logo} alt="" className="stationLogo"></img>
-            <p className="stationName"> {station.name} </p>
-          </div>
-        );
-      })}
+      </div>
+      {station && <Player station={station}></Player>}
     </div>
   );
 }
