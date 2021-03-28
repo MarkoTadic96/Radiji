@@ -10,9 +10,11 @@ export default function Header(props: IHeaderProps) {
   return (
     <div className="header">
       <img src={siteLogo} alt="" className="siteLogo"></img>
+      <div className="spacer"></div>
       <div className="searchBar">
         {" "}
         <input
+          className="searchBar"
           type="search"
           placeholder="find your station"
           onChange={(e) => {
