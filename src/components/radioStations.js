@@ -5,9 +5,9 @@ const radios = [
     logo: "logos/otvoreniRadioLogo.png",
   },
   {
-    name: "Radio JAT",
-    src: "https://streaming.radiojat.rs/radiojat.mp3",
-    logo: "logos/radioJatLogo.png",
+    name: "Laganini Radio",
+    src: "http://194.145.208.251:8000/stream/1/",
+    logo: "logos/laganiniRadioLogo.png",
   },
   {
     name: "Enter ZG",
