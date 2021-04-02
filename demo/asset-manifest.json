@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Radiji/static/css/main.da89ea47.chunk.css",
+    "main.js": "/Radiji/static/js/main.7092ddb7.chunk.js",
+    "main.js.map": "/Radiji/static/js/main.7092ddb7.chunk.js.map",
+    "runtime-main.js": "/Radiji/static/js/runtime-main.fb3966d4.js",
+    "runtime-main.js.map": "/Radiji/static/js/runtime-main.fb3966d4.js.map",
+    "static/css/2.d59c41ec.chunk.css": "/Radiji/static/css/2.d59c41ec.chunk.css",
+    "static/js/2.da6ebcd5.chunk.js": "/Radiji/static/js/2.da6ebcd5.chunk.js",
+    "static/js/2.da6ebcd5.chunk.js.map": "/Radiji/static/js/2.da6ebcd5.chunk.js.map",
+    "static/js/3.de77bf14.chunk.js": "/Radiji/static/js/3.de77bf14.chunk.js",
+    "static/js/3.de77bf14.chunk.js.map": "/Radiji/static/js/3.de77bf14.chunk.js.map",
+    "index.html": "/Radiji/index.html",
+    "static/css/2.d59c41ec.chunk.css.map": "/Radiji/static/css/2.d59c41ec.chunk.css.map",
+    "static/css/main.da89ea47.chunk.css.map": "/Radiji/static/css/main.da89ea47.chunk.css.map",
+    "static/js/2.da6ebcd5.chunk.js.LICENSE.txt": "/Radiji/static/js/2.da6ebcd5.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Radiji/static/media/backgroundImage.926b7773.jpg",
+    "static/media/siteLogo.242b6165.svg": "/Radiji/static/media/siteLogo.242b6165.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb3966d4.js",
+    "static/css/2.d59c41ec.chunk.css",
+    "static/js/2.da6ebcd5.chunk.js",
+    "static/css/main.da89ea47.chunk.css",
+    "static/js/main.7092ddb7.chunk.js"
+  ]
+}
