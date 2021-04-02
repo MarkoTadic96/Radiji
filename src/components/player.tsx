@@ -65,6 +65,7 @@ export default function Player(props: IPlayerProps) {
             min={0}
             max={1}
             step={0.01}
+            defaultValue={1}
             onChange={(value) => {
               if (audioRef.current) {
                 audioRef.current.volume = value;
