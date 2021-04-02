@@ -1,5 +1,7 @@
+import Slider from "rc-slider/lib/Slider";
 import * as React from "react";
 import { RadioStation } from "../model/RadioStation";
+import "rc-slider/assets/index.css";
 import "./player.css";
 
 export interface IPlayerProps {
@@ -12,9 +14,16 @@ export default function Player(props: IPlayerProps) {
 
   React.useEffect(() => {
     if (isPlaying) {
+      if (audioRef.current) {
+        audioRef.current.src = props.station.src;
+      }
       audioRef.current?.load();
       audioRef.current?.play();
     } else {
+      if (audioRef.current) {
+        audioRef.current.src = "";
+      }
+      audioRef.current?.load();
       audioRef.current?.pause();
     }
   }, [isPlaying, audioRef, props.station]);
@@ -25,7 +34,7 @@ export default function Player(props: IPlayerProps) {
       <div className="player">
         {props.station != null && (
           <div className="stationDetails">
-            <audio ref={audioRef} src={props.station.src} />
+            <audio ref={audioRef} />
             <img
               src={props.station.logo}
               alt=""
@@ -49,17 +58,19 @@ export default function Player(props: IPlayerProps) {
         </div>
 
         <div className="volumeControl">
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            onInput={(e) => {
+          <img src="logos/volume.png" alt="" className="volumeIcon"></img>
+
+          <Slider
+            className="slider"
+            min={0}
+            max={1}
+            step={0.01}
+            onChange={(value) => {
               if (audioRef.current) {
-                audioRef.current.volume = +e.currentTarget.value;
+                audioRef.current.volume = value;
               }
             }}
-          />
+          ></Slider>
         </div>
       </div>
     </div>
