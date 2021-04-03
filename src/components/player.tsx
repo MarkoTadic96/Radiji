@@ -30,7 +30,6 @@ export default function Player(props: IPlayerProps) {
 
   return (
     <div>
-      <div className="background"> </div>
       <div className="player">
         {props.station != null && (
           <div className="stationDetails">

@@ -34,3 +34,22 @@
 .spacer {
   flex-grow: 1;
 }
+
+@media screen and (max-width: 668px) {
+  .searchBar {
+    width: 200px;
+
+    background: rgb(129, 155, 172);
+    color: rgba(47, 72, 88, 1);
+    font-size: medium;
+    padding-left: 7px;
+    border-style: none;
+    border-radius: 5px;
+  }
+  .header {
+    padding: 0 15px;
+  }
+  .siteLogo {
+    height: 50%;
+  }
+}

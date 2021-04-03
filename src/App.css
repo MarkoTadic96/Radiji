@@ -41,3 +41,31 @@
   position: absolute;
   left: 400px;
 }
+
+@media screen and (max-width: 668px) {
+  .main {
+    margin-top: 80px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+
+  .station {
+    height: 89px;
+    cursor: pointer;
+    width: 80%;
+    background: rgba(253, 240, 202, 0.5);
+    margin: 15px;
+
+    display: flex;
+
+    align-items: center;
+  }
+
+  .stationName {
+    display: none;
+  }
+  .station:focus {
+    background-color: #ffdb3a;
+  }
+}
